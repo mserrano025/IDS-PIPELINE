@@ -1,4 +1,4 @@
-# IDS-Framework
+# IDS-Pipeline
 
 This repository provides an Intrusion Detection System (IDS) framework that can be executed in three different modes: locally, sniffing real network traffic, or in a distributed Kubernetes environment.
 
@@ -7,7 +7,7 @@ This repository provides an Intrusion Detection System (IDS) framework that can 
 The repository is organized as follows:
 
 ```bash
-IDS-FRAMEWORK/ 
+IDS-PIPELINE/ 
 │── CICFlowMeter-4.0/ # Tool for network flow feature extraction 
 │── CICIDS2017/ # Dataset used for training and evaluation 
 │── csvs/ # Preprocessed CSV files 
@@ -32,7 +32,7 @@ IDS-FRAMEWORK/
 │── requirements.txt # Python dependencies
 ```
 
-## Running the IDS Framework
+## Running the IDS Pipeline
 
 The IDS can be executed in three different modes:
 
