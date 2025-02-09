@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-service
+  template:
+    metadata:
+      labels:
+        app: data-service
+    spec:
+      volumes:
+        - name: dataset-storage
+          persistentVolumeClaim:
+            claimName: dataset-pvc
+        - name: log-storage
+          emptyDir: {}  # Temporal space for logs
+      containers:
+      - name: data-service
+        imagePullPolicy: Never
+        image: data-service-image  # Image name in minikube
+        volumeMounts:
+          - mountPath: "/app/datasets"
+            name: dataset-storage
+          - mountPath: "/app/logs"
+            name: log-storage
+        ports:
+        - containerPort: 5000
